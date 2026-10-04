@@ -1,0 +1,19 @@
+{
+ "label": "D_adp",
+ "n": 16384,
+ "dist": "easy",
+ "env": {
+  "CUBLAS_EMULATE_DOUBLE_PRECISION": "1"
+ },
+ "iters": 44,
+ "elapsed_s": 26.791,
+ "tflops_sustained": 14.446330197753884,
+ "power_w_mean": 566.7559166666667,
+ "power_w_max": 577.96,
+ "clock_sm_mean": 2194.858333333333,
+ "temp_c_max": 70.0,
+ "util_gpu_mean": 99.28333333333333,
+ "gflops_per_watt": 25.4895092806775,
+ "samples_total": 136,
+ "samples_steady": 120
+}

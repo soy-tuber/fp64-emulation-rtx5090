@@ -1,0 +1,59 @@
+=== Phase A: size sweep, native vs emulated (ADP automatic) ===
+[A_native            ] easy n=2048       11.59 ms    1.482 TFLOPS relerr_med=1.468e-15
+[A_native            ] easy n=4096       82.99 ms    1.656 TFLOPS relerr_med=2.187e-15
+[A_native            ] easy n=8192      651.84 ms    1.687 TFLOPS relerr_med=2.288e-15
+[A_native            ] easy n=16384    5117.66 ms    1.719 TFLOPS relerr_med=3.982e-15
+[A_native            ] hard n=2048       11.63 ms    1.478 TFLOPS relerr_med=1.004e-15
+[A_native            ] hard n=4096       82.93 ms    1.657 TFLOPS relerr_med=2.345e-15
+[A_native            ] hard n=8192      651.65 ms    1.687 TFLOPS relerr_med=2.883e-15
+[A_native            ] hard n=16384    5123.56 ms    1.717 TFLOPS relerr_med=3.891e-15
+  -> A_native.json (106s)
+[A_emu_adp           ] easy n=2048        3.13 ms    5.494 TFLOPS relerr_med=0.000e+00
+[A_emu_adp           ] easy n=4096       13.76 ms    9.992 TFLOPS relerr_med=0.000e+00
+[A_emu_adp           ] easy n=8192       80.23 ms   13.704 TFLOPS relerr_med=1.155e-16
+[A_emu_adp           ] easy n=16384     622.79 ms   14.124 TFLOPS relerr_med=1.343e-16
+[A_emu_adp           ] hard n=2048        3.71 ms    4.630 TFLOPS relerr_med=0.000e+00
+[A_emu_adp           ] hard n=4096       19.57 ms    7.023 TFLOPS relerr_med=0.000e+00
+[A_emu_adp           ] hard n=8192      112.11 ms    9.808 TFLOPS relerr_med=0.000e+00
+[A_emu_adp           ] hard n=16384     922.77 ms    9.532 TFLOPS relerr_med=1.341e-16
+  -> A_emu_adp.json (36s)
+=== Phase B: strategy check at n=8192 ===
+[B_emu_performant    ] easy n=8192       80.64 ms   13.634 TFLOPS relerr_med=1.166e-16
+[B_emu_performant    ] hard n=8192      112.57 ms    9.767 TFLOPS relerr_med=0.000e+00
+  -> B_emu_performant.json (6s)
+[B_emu_eager         ] easy n=8192       80.32 ms   13.688 TFLOPS relerr_med=1.166e-16
+[B_emu_eager         ] hard n=8192      112.53 ms    9.770 TFLOPS relerr_med=0.000e+00
+  -> B_emu_eager.json (6s)
+=== Phase C: mantissa-bit sweep at n=8192 (accuracy/speed curve) ===
+[C_mant08            ] easy n=8192       11.53 ms   95.397 TFLOPS relerr_med=1.303e-04
+[C_mant08            ] hard n=8192       11.21 ms   98.099 TFLOPS relerr_med=1.185e-03
+  -> C_mant08.json (5s)
+[C_mant12            ] easy n=8192       11.54 ms   95.285 TFLOPS relerr_med=1.303e-04
+[C_mant12            ] hard n=8192       11.15 ms   98.607 TFLOPS relerr_med=1.185e-03
+  -> C_mant12.json (5s)
+[C_mant16            ] easy n=8192       18.07 ms   60.850 TFLOPS relerr_med=4.877e-07
+[C_mant16            ] hard n=8192       17.52 ms   62.757 TFLOPS relerr_med=1.139e-05
+  -> C_mant16.json (5s)
+[C_mant20            ] easy n=8192       18.04 ms   60.933 TFLOPS relerr_med=4.877e-07
+[C_mant20            ] hard n=8192       17.61 ms   62.440 TFLOPS relerr_med=1.139e-05
+  -> C_mant20.json (5s)
+[C_mant24            ] easy n=8192       26.23 ms   41.920 TFLOPS relerr_med=1.774e-09
+[C_mant24            ] hard n=8192       25.53 ms   43.062 TFLOPS relerr_med=5.634e-08
+  -> C_mant24.json (5s)
+[C_mant28            ] easy n=8192       25.81 ms   42.599 TFLOPS relerr_med=1.774e-09
+[C_mant28            ] hard n=8192       25.46 ms   43.193 TFLOPS relerr_med=5.634e-08
+  -> C_mant28.json (5s)
+[C_mant32            ] easy n=8192       36.47 ms   30.146 TFLOPS relerr_med=9.120e-12
+[C_mant32            ] hard n=8192       35.35 ms   31.104 TFLOPS relerr_med=2.335e-10
+  -> C_mant32.json (5s)
+[C_mant40            ] easy n=8192       48.37 ms   22.732 TFLOPS relerr_med=2.977e-14
+[C_mant40            ] hard n=8192       47.13 ms   23.328 TFLOPS relerr_med=9.893e-13
+  -> C_mant40.json (5s)
+[C_mant48            ] easy n=8192       61.80 ms   17.793 TFLOPS relerr_med=1.613e-16
+[C_mant48            ] hard n=8192       60.06 ms   18.308 TFLOPS relerr_med=5.588e-15
+  -> C_mant48.json (5s)
+[C_mant53            ] easy n=8192       61.86 ms   17.775 TFLOPS relerr_med=1.613e-16
+[C_mant53            ] hard n=8192       59.86 ms   18.367 TFLOPS relerr_med=5.588e-15
+  -> C_mant53.json (5s)
+=== done ===
+14 result files

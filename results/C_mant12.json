@@ -1,0 +1,57 @@
+{
+ "label": "C_mant12",
+ "cublas_version": 130202,
+ "cuda_dir": "C:\\shogi\\fukauraou_v940",
+ "has_fma": true,
+ "phi": 10.0,
+ "env": {
+  "CUBLAS_EMULATE_DOUBLE_PRECISION": "1",
+  "CUBLAS_FIXEDPOINT_EMULATION_MANTISSA_BIT_COUNT": "12"
+ },
+ "runs": [
+  {
+   "n": 8192,
+   "dist": "easy",
+   "reps": 3,
+   "ms_median": 11.539168357849121,
+   "ms_best": 11.509344100952148,
+   "ms_all": [
+    11.509344100952148,
+    11.539168357849121,
+    11.645471572875977
+   ],
+   "tflops_median": 95.28517079206105,
+   "tflops_best": 95.53208402944867,
+   "gpu_mem_used_MiB": 3192.4375,
+   "accuracy": {
+    "samples": 32,
+    "rel_err_max": 0.0007056090562039973,
+    "rel_err_median": 0.00013032619746958352,
+    "rel_err_mean": 0.00019348535035163903
+   },
+   "wall_s": 1.6
+  },
+  {
+   "n": 8192,
+   "dist": "hard",
+   "reps": 3,
+   "ms_median": 11.150400161743164,
+   "ms_best": 11.114656448364258,
+   "ms_all": [
+    11.114656448364258,
+    11.150400161743164,
+    11.155167579650879
+   ],
+   "tflops_median": 98.60736940620356,
+   "tflops_best": 98.92448164133899,
+   "gpu_mem_used_MiB": 3192.4375,
+   "accuracy": {
+    "samples": 32,
+    "rel_err_max": 0.011884517974439197,
+    "rel_err_median": 0.0011848421736539937,
+    "rel_err_mean": 0.002107401948489199
+   },
+   "wall_s": 2.93
+  }
+ ]
+}

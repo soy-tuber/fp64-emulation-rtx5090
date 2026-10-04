@@ -1,0 +1,17 @@
+{
+ "label": "D_native",
+ "n": 16384,
+ "dist": "easy",
+ "env": {},
+ "iters": 8,
+ "elapsed_s": 41.018,
+ "tflops_sustained": 1.715539083700104,
+ "power_w_mean": 221.29643979057593,
+ "power_w_max": 222.85,
+ "clock_sm_mean": 2882.895287958115,
+ "temp_c_max": 55.0,
+ "util_gpu_mean": 100.0,
+ "gflops_per_watt": 7.752221794998627,
+ "samples_total": 207,
+ "samples_steady": 191
+}

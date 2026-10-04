@@ -1,0 +1,20 @@
+{
+ "label": "D_mant08",
+ "n": 16384,
+ "dist": "easy",
+ "env": {
+  "CUBLAS_EMULATE_DOUBLE_PRECISION": "1",
+  "CUBLAS_FIXEDPOINT_EMULATION_MANTISSA_BIT_COUNT": "8"
+ },
+ "iters": 420,
+ "elapsed_s": 25.051,
+ "tflops_sustained": 147.4760929649785,
+ "power_w_mean": 575.1578761061947,
+ "power_w_max": 581.58,
+ "clock_sm_mean": 2489.761061946903,
+ "temp_c_max": 76.0,
+ "util_gpu_mean": 96.95575221238938,
+ "gflops_per_watt": 256.4097599834469,
+ "samples_total": 129,
+ "samples_steady": 113
+}
