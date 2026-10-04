@@ -404,6 +404,28 @@ def main():
       "増えるため利得は下がるが、それでも %.1f&times; を保っている。</p>"
       % (min(r[1] for r in rows if r[1]), nat_peak, best["sp_hard"]))
 
+    nmax = sizes[-1]
+    an, ae = pick(nat, nmax, "easy"), pick(emu, nmax, "easy")
+    if an and ae and an.get("accuracy") and ae.get("accuracy"):
+        mn = an["accuracy"]["rel_err_max"]
+        me = ae["accuracy"]["rel_err_max"]
+        A("<h3>精度は中央値より最悪値の方が差が大きい</h3>")
+        A("<table><thead><tr><th>n=%d</th><th>相対誤差 中央値</th>"
+          "<th>相対誤差 最悪値</th></tr></thead><tbody>"
+          "<tr><td>native FP64</td><td>%s</td><td>%s</td></tr>"
+          "<tr><td>emulated (ADP)</td><td>%s</td><td>%s</td></tr>"
+          "</tbody></table>"
+          % (nmax, fmt_err(relerr(an)), fmt_err(mn),
+             fmt_err(relerr(ae)), fmt_err(me)))
+        A("<p>中央値では %.0f 倍の差だが、<b>最悪値では %.0f 倍</b>開く。"
+          "native FP64 の誤差は n 項の総和にわたる累積なので、"
+          "打ち消しが起きた要素で大きく悪化する。固定小数点エミュレーションは"
+          "整数で厳密に積和して最後に一度だけ丸めるため、"
+          "この種の最悪ケースを構造的に持たない。"
+          "条件数を2乗する正規方程式のような用途では、"
+          "この最悪値の差がそのまま効いてくる。</p>"
+          % (relerr(an) / relerr(ae) if relerr(ae) else 0, mn / me if me else 0))
+
     if tB:
         A("<h2>エミュレーション戦略の影響</h2>")
         A("<p><code>CUBLAS_EMULATION_STRATEGY</code> は "
